@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+
+{%block content%}
+<h1>Comidas Mexicanas</h1>
+<div class= "row"> 
+{% for comida in comida %}
+<div class="col"> 
+    <div class="card" style="width: 18rem;">
+        <img src="{{ comida.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ comida.name }}</h5>
+          <p class="card-text">{{comida.descripcion}}</p>
+          <p class="card-text">${{comida.precio}}</p>
+          <a href="#" class="btn btn-primary"> Regresar </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+{% endblock %}

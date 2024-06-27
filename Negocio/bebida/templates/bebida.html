@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+
+{%block content%}
+<h1>Bebidas Mexicanas</h1>
+<div class= "row"> 
+{% for bebida in bebida %}
+<div class="col"> 
+    <div class="card" style="width: 18rem;">
+        <img src="{{ bebida.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ bebida.name }}</h5>
+          <p class="card-text">{{bebida.descripcion}}</p>
+          <p class="card-text">${{bebida.precio}}</p>
+          <a href="#" class="btn btn-primary"> Regresar </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+{% endblock %}
